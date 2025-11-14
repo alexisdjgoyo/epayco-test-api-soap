@@ -1,0 +1,53 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: laravel_app
+    restart: unless-stopped
+    volumes:
+      - .:/var/www
+    depends_on:
+      - db
+    ports:
+      - "9000:9000"
+    networks:
+      - app-network
+    # command: sh -c "cd /var/www && composer install && npm install && php-fpm"
+
+  webserver:
+    image: nginx:alpine
+    container_name: laravel_webserver
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8.0
+    container_name: laravel_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_PASSWORD: db_password
+      MYSQL_USER: laravel_user
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+volumes:
+  dbdata:
+
+networks:
+  app-network:
+    driver: bridge
