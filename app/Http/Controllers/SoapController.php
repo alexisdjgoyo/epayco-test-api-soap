@@ -115,10 +115,10 @@ class SoapController extends Controller
                 return $this->soapResponse($this->buildResponse(false, '01', 'Parámetros insuficientes'));
             }
 
-            $document = $params['documento'] ?? null;
-            $names = $params['nombres'] ?? null;
+            $document = $params['document'] ?? null;
+            $names = $params['names'] ?? null;
             $email = $params['email'] ?? null;
-            $phone_number = $params['celular'] ?? null;
+            $phone_number = $params['phone_number'] ?? null;
 
             $validator = Validator::make([
                 'document' => $document,
@@ -160,9 +160,9 @@ class SoapController extends Controller
     {
         try {
 
-            $document = $params['documento'] ?? null;
-            $phone_number = $params['celular'] ?? null;
-            $amount = $params['valor'] ?? null;
+            $document = $params['document'] ?? null;
+            $phone_number = $params['phone_number'] ?? null;
+            $amount = $params['amount'] ?? null;
 
 
             $validator = Validator::make([
@@ -219,8 +219,8 @@ class SoapController extends Controller
                 return $this->soapResponse($this->buildResponse(false, '01', 'Parámetros insuficientes'));
             }
 
-            $document = $params['documento'];
-            $phone_number = $params['celular'];
+            $document = $params['document'];
+            $phone_number = $params['phone_number'];
 
             $validator = Validator::make([
                 'document' => $document,
@@ -253,9 +253,9 @@ class SoapController extends Controller
     public function pay($params)
     {
         try {
-            $document = $params['documento'] ?? null;
-            $phone_number = $params['celular'] ?? null;
-            $amount = $params['monto'] ?? null;
+            $document = $params['document'] ?? null;
+            $phone_number = $params['phone_number'] ?? null;
+            $amount = $params['amount'] ?? null;
 
             $validator = Validator::make([
                 'document' => $document,
