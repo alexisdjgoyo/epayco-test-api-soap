@@ -181,7 +181,8 @@ class WalletService
                 'status' => 'PENDING',
             ]);
 
-            $client->notify(new PaymentTokenNotification($token, $amount));
+            //  Envio de correo no funcional
+            // $client->notify(new PaymentTokenNotification($token, $amount));
 
             return $this->soapResponse($this->buildResponse(true, '00', 'Token enviado al correo', [
                 'session_id' => $sessionId,
