@@ -1,0 +1,209 @@
+{
+  "info": {
+    "name": "epayco",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Confirmar pago",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "localhost/api/soap",
+          "protocol": "",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "soap"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soap:Body>\n        <confirmarPago>\n            <session_id>pay_691b46ed453304.74232075</session_id>\n            <token>226324</token>\n        </confirmarPago>\n    </soap:Body>\n</soap:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Consultar saldo wallet",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "localhost/api/soap",
+          "protocol": "",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "soap"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soap:Body>\n        <consultarSaldo>\n            <document>123456789</document>\n            <phone_number>3001234567</phone_number>\n        </consultarSaldo>\n    </soap:Body>\n</soap:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Pagar",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "localhost/api/soap",
+          "protocol": "",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "soap"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soap:Body>\n        <pagar>\n            <document>123456789</document>\n            <phone_number>3001234567</phone_number>\n            <amount>300</amount>\n        </pagar>\n    </soap:Body>\n</soap:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Recargar wallet",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "localhost/api/soap",
+          "protocol": "",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "soap"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soap:Body>\n        <recargarBilletera>\n            <document>123456789</document>\n            <phone_number>3001234567</phone_number>\n            <amount>400</amount>\n        </recargarBilletera>\n    </soap:Body>\n</soap:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Registrar cliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "localhost/api/soap",
+          "protocol": "",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "soap"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soap:Body>\n        <registroCliente>\n            <document>123456789</document>\n            <names>Juan Perez</names>\n            <email>alexis@gmail.com</email>\n            <phone_number>3001234567</phone_number>\n        </registroCliente>\n    </soap:Body>\n</soap:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": []
+}
