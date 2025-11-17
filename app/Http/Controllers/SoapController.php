@@ -62,7 +62,7 @@ class SoapController extends Controller
             case 'consultarSaldo':
                 return $this->walletService->checkBalance($params);
             default:
-                return $this->walletService->soapError('Operación no válida: ' . $operation);
+                return $this->soapError('Operación no válida: ' . $operation);
         }
     }
 
